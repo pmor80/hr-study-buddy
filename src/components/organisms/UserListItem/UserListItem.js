@@ -2,17 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/atoms/Button/Button';
 import AverageIcon from 'components/atoms/AverageIcon/AverageIcon';
-import { Wrapper } from './UserListItem.styles';
+import { StyledInfo, Wrapper } from './UserListItem.styles';
 
-const UserListItem = ({ userData: { name, average, attendance = '0%' } }) => {
+const showIndex = (index) => alert(`This is student ${index + 1}`);
+
+const UserListItem = ({ deleteUser, index, userData: { name, average, attendance = '0%' } }) => {
   return (
-    <Wrapper key={`${name}-${average}`}>
+    <Wrapper key={index}>
       <AverageIcon average={average} />
-      <div>
-        <p>{name}</p>
+      <StyledInfo>
+        <p>
+          {name} <Button onClick={() => deleteUser(name)} />
+        </p>
         <p>{attendance}</p>
-      </div>
-      <Button />
+      </StyledInfo>
     </Wrapper>
   );
 };

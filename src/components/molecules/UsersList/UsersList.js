@@ -1,21 +1,26 @@
-import React from 'react';
-import { users } from 'data/users';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { users as usersData } from 'data/users';
 import UserListItem from 'components/organisms/UserListItem/UserListItem.js';
-import { Wrapper, StyledList } from './UsersList.styles';
+import { StyledList, StyledTitle, Wrapper } from './UsersList.styles';
 
 const UsersList = (props) => {
+  const [users, setUsers] = useState(usersData);
+
+  const deleteUser = (name) => {
+    const filteredUsers = users.filter((user) => user.name !== name);
+    setUsers(filteredUsers);
+  };
+
   return (
     <Wrapper>
+      <StyledTitle>Students list</StyledTitle>
       <StyledList>
-        {users.map((userData) => (
-          <UserListItem userData={userData} />
+        {users.map((userData, i) => (
+          <UserListItem deleteUser={deleteUser} index={i} userData={userData} />
         ))}
       </StyledList>
     </Wrapper>
   );
 };
-
-UsersList.propTypes = {};
 
 export default UsersList;
