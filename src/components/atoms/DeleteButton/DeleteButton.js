@@ -10,6 +10,4 @@ function DeleteButton(props) {
   );
 }
 
-DeleteButton.propTypes = {};
-
 export default DeleteButton;

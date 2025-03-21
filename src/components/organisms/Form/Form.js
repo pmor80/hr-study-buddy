@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledTitle, Wrapper } from 'components/organisms/UsersList/UsersList.styles';
+import { StyledTitle, Wrapper } from '../UsersList/UsersList.styles';
 import FormField from 'components/molecules/FormField/FormField';
 import { Button } from 'components/atoms/Button/Button';
 
