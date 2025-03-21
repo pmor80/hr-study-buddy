@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import UsersListItem from 'components/molecules/UsersListItem/UsersListItem';
 import { StyledList, StyledTitle, Wrapper } from './UsersList.styles';
 

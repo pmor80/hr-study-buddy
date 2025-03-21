@@ -3,7 +3,7 @@ import { StyledTitle, Wrapper } from '../UsersList/UsersList.styles';
 import FormField from 'components/molecules/FormField/FormField';
 import { Button } from 'components/atoms/Button/Button';
 
-const Form = ({ handleAddUser, formValues, handleInputChange }) => {
+const Form = ({ formValues, handleAddUser, handleInputChange }) => {
   return (
     <>
       <Wrapper as="form" onSubmit={handleAddUser}>
